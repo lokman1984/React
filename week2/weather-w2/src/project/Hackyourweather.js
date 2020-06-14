@@ -26,12 +26,13 @@ const Hackyourweather = () => {
 				setLoading(false);
 			}
 		} catch (err) {
-			console.log(err);
+			
 			setError('Something went wrong...');
+			setLoading(false)
 		}
 	};
 
-	const handelSearch = (e) => {
+	const handleSearch = (e) => {
 		setInputValue(e.target.value);
 	};
 	const handelButton = (e) => {
@@ -44,8 +45,8 @@ const Hackyourweather = () => {
 			<h1>Weather</h1>
 			<h3>{message}</h3>
 			<form className="btn2">
-				<Search handelSearch={handelSearch} />
-				<Button handelButton={handelButton} />
+				<Search handleSearch={handleSearch} />
+				<Button handleButton={handleButton} />
 			</form>
 
 			{error && <h2>{error}</h2>}

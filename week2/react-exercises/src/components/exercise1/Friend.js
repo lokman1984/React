@@ -4,19 +4,19 @@ import Button from './Button';
 
 const Friend = () => {
 	const [ friend, setFriend ] = useState();
-	const [ isLoadin, setLoading ] = useState(true);
+	const [ isLoading, setLoading ] = useState(true);
 	const [ hasError, setError ] = useState(false);
 	const getFriend = () => {
 		fetch('https://www.randomuser.me/api?results=1')
 			.then((res) => res.json())
 			.then((data) => {
-                console.log(data)
+               
 				setFriend(data.results[0]);
                 setLoading(false);
              
 			})
 			.catch((err) => {
-				console.log('error', err);
+				
 				setError(true);
 				setLoading(false);
 			});
